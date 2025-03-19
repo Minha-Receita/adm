@@ -37,13 +37,13 @@ export default function CriarReceita() {
   const recipeId = params?.id;
 
   useEffect(() => {
-    fetch("https://mikael.dev.br/sessions/")
+    fetch("https://mikael.dev.br/sessions/",{mode: "cors"})
       .then((res) => res.json())
       .then(setSessions)
       .catch((err) => console.error("Erro ao buscar sessões", err));
 
     if (recipeId) {
-      fetch(`https://mikael.dev.br/recipes/${recipeId}`)
+      fetch(`https://mikael.dev.br/recipes/${recipeId}`,{mode: "cors"})
         .then((res) => res.json())
         .then((data) => {
           setTitle(data.title);
@@ -128,6 +128,7 @@ export default function CriarReceita() {
         method,
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify(payload),
+        mode: "cors"
       });
 
       if (response.ok) {
