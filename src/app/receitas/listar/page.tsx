@@ -25,7 +25,7 @@ export default function ListarReceitas() {
   }, []);
 
   const fetchRecipes = () => {
-    fetch("https://mikael.dev.br/recipes")
+    fetch("https://mikael.dev.br/recipes/")
       .then((res) => res.json())
       .then((data) => setRecipes(data))
       .catch((err) => console.error("Erro ao buscar receitas", err));
