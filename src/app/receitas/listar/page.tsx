@@ -25,7 +25,7 @@ export default function ListarReceitas() {
   }, []);
 
   const fetchRecipes = () => {
-    fetch("http://15.228.184.186:8000/recipes")
+    fetch("https://mikael.dev.br/recipes")
       .then((res) => res.json())
       .then((data) => setRecipes(data))
       .catch((err) => console.error("Erro ao buscar receitas", err));
@@ -44,7 +44,7 @@ export default function ListarReceitas() {
     if (!recipeToDelete) return;
 
     try {
-      const response = await fetch(`http://15.228.184.186:8000/recipes/${recipeToDelete.id}`, {
+      const response = await fetch(`https://mikael.dev.br/recipes/${recipeToDelete.id}`, {
         method: "DELETE",
       });
 
