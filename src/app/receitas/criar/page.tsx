@@ -37,13 +37,13 @@ export default function CriarReceita() {
   const recipeId = params?.id;
 
   useEffect(() => {
-    fetch("https://mikael.dev.br/sessions/",{mode: "cors"})
+    fetch("https://api.mikael.dev.br/sessions/")
       .then((res) => res.json())
       .then(setSessions)
       .catch((err) => console.error("Erro ao buscar sessões", err));
 
     if (recipeId) {
-      fetch(`https://mikael.dev.br/recipes/${recipeId}`,{mode: "cors"})
+      fetch(`https://api.mikael.dev.br/recipes/${recipeId}`)
         .then((res) => res.json())
         .then((data) => {
           setTitle(data.title);
@@ -121,14 +121,13 @@ export default function CriarReceita() {
     try {
       const method = recipeId ? "PUT" : "POST";
       const url = recipeId
-        ? `https://mikael.dev.br/recipes/${recipeId}`
-        : "https://mikael.dev.br/recipes/";
+        ? `https://api.mikael.dev.br/recipes/${recipeId}`
+        : "https://api.mikael.dev.br/recipes/";
 
       const response = await fetch(url, {
         method,
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify(payload),
-        mode: "cors"
       });
 
       if (response.ok) {

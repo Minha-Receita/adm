@@ -25,7 +25,7 @@ export default function ListarReceitas() {
   }, []);
 
   const fetchRecipes = () => {
-    fetch("https://mikael.dev.br/recipes/",{mode: "cors"})
+    fetch("https://api.mikael.dev.br/recipes/")
       .then((res) => res.json())
       .then((data) => setRecipes(data))
       .catch((err) => console.error("Erro ao buscar receitas", err));
@@ -44,9 +44,8 @@ export default function ListarReceitas() {
     if (!recipeToDelete) return;
 
     try {
-      const response = await fetch(`https://mikael.dev.br/recipes/${recipeToDelete.id}`, {
+      const response = await fetch(`https://api.mikael.dev.br/recipes/${recipeToDelete.id}`, {
         method: "DELETE",
-        mode: "cors"
       });
 
       if (response.ok) {
