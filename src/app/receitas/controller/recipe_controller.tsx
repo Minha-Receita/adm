@@ -95,7 +95,7 @@ export function useRecipeViewModel(recipeId?: number) {
 
     const getAllIngredients = async () => {
         const method = "GET";
-        const url = "http://localhost:8000/recipes/get-ingredients";
+        const url = "https://api.mikael.dev.br/recipes/get-ingredients";
 
         const response = await fetch(url, {
             method,
@@ -115,7 +115,7 @@ export function useRecipeViewModel(recipeId?: number) {
     formData.append("image", image);
     formData.append("path", "ingredients");
 
-    const response = await fetch("http://localhost:8000/recipes/save-image", {
+    const response = await fetch("https://api.mikael.dev.br/recipes/save-image", {
         method: "POST",
         body: formData,
     });
