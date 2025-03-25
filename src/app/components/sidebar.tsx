@@ -25,7 +25,7 @@ const menuItems = [
     icon: Package, 
     name: "Receitas", 
     subMenu: [
-      { label: "Criar uma receita", path: "/receitas/criar" },
+      { label: "Criar uma receita", path: "/receitas/criar/0" },
       { label: "Listar receitas", path: "/receitas/listar" }
     ]
   },
