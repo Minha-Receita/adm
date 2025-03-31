@@ -30,7 +30,7 @@ export default function ListarReceitas({ issues_mode }: { issues_mode: boolean }
 
   const fetchRecipes = () => {
     setLoading(true); // Iniciar o carregamento
-    const path_name = mode ? "https://api.mikael.dev.br/recipes/fix/issues/" : "https://api.mikael.dev.br/recipes/";
+    const path_name = mode ? "https://api.mikael.dev.br/recipes/fix/issues" : "https://api.mikael.dev.br/recipes/";
     fetch(path_name)
       .then((res) => res.json())
       .then((data) => {
